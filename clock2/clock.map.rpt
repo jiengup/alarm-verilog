@@ -1,0 +1,945 @@
+Analysis & Synthesis report for clock
+Thu Dec 19 10:32:38 2019
+Quartus II Version 10.0 Build 218 06/27/2010 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |clock|alarmmode
+  9. State Machine - |clock|setmode
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for Top-level Entity: |clock
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |clock
+ 17. Parameter Settings for User Entity Instance: alarm_signal:alarmring
+ 18. Parameter Settings for User Entity Instance: clock_signal:clockring
+ 19. Port Connectivity Checks: "selfadder:run_min1"
+ 20. Port Connectivity Checks: "selfadder:run_min0"
+ 21. Port Connectivity Checks: "selfadder:run_sec1"
+ 22. Port Connectivity Checks: "selfadder:run_sec0"
+ 23. Port Connectivity Checks: "selfadder:run_ms1"
+ 24. Port Connectivity Checks: "selfadder:run_ms0"
+ 25. Port Connectivity Checks: "selfadder:hour1"
+ 26. Port Connectivity Checks: "selfadder:hour0"
+ 27. Port Connectivity Checks: "selfadder:min1"
+ 28. Port Connectivity Checks: "selfadder:min0"
+ 29. Port Connectivity Checks: "selfadder:sec1"
+ 30. Port Connectivity Checks: "selfadder:sec0"
+ 31. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Dec 19 10:32:38 2019     ;
+; Quartus II Version                 ; 10.0 Build 218 06/27/2010 SJ Full Version ;
+; Revision Name                      ; clock                                     ;
+; Top-level Entity Name              ; clock                                     ;
+; Family                             ; Cyclone IV E                              ;
+; Total logic elements               ; 562                                       ;
+;     Total combinational functions  ; 558                                       ;
+;     Dedicated logic registers      ; 222                                       ;
+; Total registers                    ; 222                                       ;
+; Total pins                         ; 65                                        ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 0                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total PLLs                         ; 0                                         ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; clock              ; clock              ;
+; Family name                                                                ; Cyclone IV E       ; Stratix II         ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+
+; show.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/show.v              ;
+; selfadder.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/selfadder.v         ;
+; original_to_100HZ.v              ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/original_to_100HZ.v ;
+; original_to_2HZ.v                ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/original_to_2HZ.v   ;
+; original_to_1kHZ.v               ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/original_to_1kHZ.v  ;
+; original_to_1HZ.v                ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/original_to_1HZ.v   ;
+; display.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/display.v           ;
+; clock_signal.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/clock_signal.v      ;
+; clock.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/clock.v             ;
+; alarm_signal.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/clock2/alarm_signal.v      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 562                ;
+;                                             ;                    ;
+; Total combinational functions               ; 558                ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 256                ;
+;     -- 3 input functions                    ; 80                 ;
+;     -- <=2 input functions                  ; 222                ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 409                ;
+;     -- arithmetic mode                      ; 149                ;
+;                                             ;                    ;
+; Total registers                             ; 222                ;
+;     -- Dedicated logic registers            ; 222                ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 65                 ;
+; Maximum fan-out node                        ; original_clk~input ;
+; Maximum fan-out                             ; 114                ;
+; Total fan-out                               ; 2278               ;
+; Average fan-out                             ; 2.50               ;
++---------------------------------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
++---------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; |clock                          ; 558 (96)          ; 222 (22)     ; 0           ; 0          ; 0            ; 0       ; 0         ; 65   ; 0            ; |clock                              ;              ;
+;    |alarm_signal:alarmring|     ; 81 (81)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|alarm_signal:alarmring       ;              ;
+;    |clock_signal:clockring|     ; 16 (16)           ; 32 (32)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|clock_signal:clockring       ;              ;
+;    |original_to_100HZ:get100HZ| ; 49 (49)           ; 29 (29)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|original_to_100HZ:get100HZ   ;              ;
+;    |original_to_1HZ:get1HZ|     ; 53 (53)           ; 28 (28)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|original_to_1HZ:get1HZ       ;              ;
+;    |original_to_1kHZ:get1kHZ|   ; 42 (42)           ; 27 (27)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|original_to_1kHZ:get1kHZ     ;              ;
+;    |original_to_2HZ:get2HZ|     ; 54 (54)           ; 30 (30)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|original_to_2HZ:get2HZ       ;              ;
+;    |selfadder:hour0|            ; 11 (11)           ; 5 (5)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:hour0              ;              ;
+;    |selfadder:hour1|            ; 1 (1)             ; 2 (2)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:hour1              ;              ;
+;    |selfadder:min0|             ; 5 (5)             ; 5 (5)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:min0               ;              ;
+;    |selfadder:min1|             ; 4 (4)             ; 4 (4)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:min1               ;              ;
+;    |selfadder:run_min0|         ; 8 (8)             ; 5 (5)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:run_min0           ;              ;
+;    |selfadder:run_min1|         ; 7 (7)             ; 4 (4)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:run_min1           ;              ;
+;    |selfadder:run_ms0|          ; 8 (8)             ; 5 (5)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:run_ms0            ;              ;
+;    |selfadder:run_ms1|          ; 8 (8)             ; 5 (5)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:run_ms1            ;              ;
+;    |selfadder:run_sec0|         ; 8 (8)             ; 5 (5)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:run_sec0           ;              ;
+;    |selfadder:run_sec1|         ; 4 (4)             ; 4 (4)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:run_sec1           ;              ;
+;    |selfadder:sec0|             ; 5 (5)             ; 5 (5)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:sec0               ;              ;
+;    |selfadder:sec1|             ; 4 (4)             ; 4 (4)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|selfadder:sec1               ;              ;
+;    |show:comb_11|               ; 94 (1)            ; 1 (1)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|show:comb_11                 ;              ;
+;       |display:comb_10|         ; 15 (15)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|show:comb_11|display:comb_10 ;              ;
+;       |display:comb_11|         ; 16 (16)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|show:comb_11|display:comb_11 ;              ;
+;       |display:comb_6|          ; 15 (15)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|show:comb_11|display:comb_6  ;              ;
+;       |display:comb_7|          ; 16 (16)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|show:comb_11|display:comb_7  ;              ;
+;       |display:comb_8|          ; 15 (15)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|show:comb_11|display:comb_8  ;              ;
+;       |display:comb_9|          ; 16 (16)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |clock|show:comb_11|display:comb_9  ;              ;
++---------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------+
+; State Machine - |clock|alarmmode                                             ;
++-------------------+-------------------+-------------------+------------------+
+; Name              ; alarmmode.noneset ; alarmmode.hourset ; alarmmode.minset ;
++-------------------+-------------------+-------------------+------------------+
+; alarmmode.noneset ; 0                 ; 0                 ; 0                ;
+; alarmmode.minset  ; 1                 ; 0                 ; 1                ;
+; alarmmode.hourset ; 1                 ; 1                 ; 0                ;
++-------------------+-------------------+-------------------+------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------+
+; State Machine - |clock|setmode                                                        ;
++-----------------+-----------------+-----------------+----------------+----------------+
+; Name            ; setmode.noneset ; setmode.hourset ; setmode.minset ; setmode.secset ;
++-----------------+-----------------+-----------------+----------------+----------------+
+; setmode.noneset ; 0               ; 0               ; 0              ; 0              ;
+; setmode.secset  ; 1               ; 0               ; 0              ; 1              ;
+; setmode.minset  ; 1               ; 0               ; 1              ; 0              ;
+; setmode.hourset ; 1               ; 1               ; 0              ; 0              ;
++-----------------+-----------------+-----------------+----------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                              ;
++-----------------------------------------------------+-----------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal               ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------------+------------------------+
+; show:comb_11|display:comb_6|out[0]                  ; show:comb_11|display:comb_6|Mux7  ; yes                    ;
+; show:comb_11|display:comb_6|out[1]                  ; show:comb_11|display:comb_6|Mux7  ; yes                    ;
+; show:comb_11|display:comb_6|out[2]                  ; show:comb_11|display:comb_6|Mux7  ; yes                    ;
+; show:comb_11|display:comb_6|out[3]                  ; show:comb_11|display:comb_6|Mux7  ; yes                    ;
+; show:comb_11|display:comb_6|out[4]                  ; show:comb_11|display:comb_6|Mux7  ; yes                    ;
+; show:comb_11|display:comb_6|out[5]                  ; show:comb_11|display:comb_6|Mux7  ; yes                    ;
+; show:comb_11|display:comb_6|out[6]                  ; show:comb_11|display:comb_6|Mux7  ; yes                    ;
+; show:comb_11|display:comb_7|out[0]                  ; show:comb_11|display:comb_7|Mux7  ; yes                    ;
+; show:comb_11|display:comb_7|out[1]                  ; show:comb_11|display:comb_7|Mux7  ; yes                    ;
+; show:comb_11|display:comb_7|out[2]                  ; show:comb_11|display:comb_7|Mux7  ; yes                    ;
+; show:comb_11|display:comb_7|out[3]                  ; show:comb_11|display:comb_7|Mux7  ; yes                    ;
+; show:comb_11|display:comb_7|out[4]                  ; show:comb_11|display:comb_7|Mux7  ; yes                    ;
+; show:comb_11|display:comb_7|out[5]                  ; show:comb_11|display:comb_7|Mux7  ; yes                    ;
+; show:comb_11|display:comb_7|out[6]                  ; show:comb_11|display:comb_7|Mux7  ; yes                    ;
+; show:comb_11|display:comb_8|out[0]                  ; show:comb_11|display:comb_8|Mux7  ; yes                    ;
+; show:comb_11|display:comb_8|out[1]                  ; show:comb_11|display:comb_8|Mux7  ; yes                    ;
+; show:comb_11|display:comb_8|out[2]                  ; show:comb_11|display:comb_8|Mux7  ; yes                    ;
+; show:comb_11|display:comb_8|out[3]                  ; show:comb_11|display:comb_8|Mux7  ; yes                    ;
+; show:comb_11|display:comb_8|out[4]                  ; show:comb_11|display:comb_8|Mux7  ; yes                    ;
+; show:comb_11|display:comb_8|out[5]                  ; show:comb_11|display:comb_8|Mux7  ; yes                    ;
+; show:comb_11|display:comb_8|out[6]                  ; show:comb_11|display:comb_8|Mux7  ; yes                    ;
+; show:comb_11|display:comb_9|out[0]                  ; show:comb_11|display:comb_9|Mux7  ; yes                    ;
+; show:comb_11|display:comb_9|out[1]                  ; show:comb_11|display:comb_9|Mux7  ; yes                    ;
+; show:comb_11|display:comb_9|out[2]                  ; show:comb_11|display:comb_9|Mux7  ; yes                    ;
+; show:comb_11|display:comb_9|out[3]                  ; show:comb_11|display:comb_9|Mux7  ; yes                    ;
+; show:comb_11|display:comb_9|out[4]                  ; show:comb_11|display:comb_9|Mux7  ; yes                    ;
+; show:comb_11|display:comb_9|out[5]                  ; show:comb_11|display:comb_9|Mux7  ; yes                    ;
+; show:comb_11|display:comb_9|out[6]                  ; show:comb_11|display:comb_9|Mux7  ; yes                    ;
+; show:comb_11|display:comb_10|out[0]                 ; show:comb_11|display:comb_10|Mux7 ; yes                    ;
+; show:comb_11|display:comb_10|out[1]                 ; show:comb_11|display:comb_10|Mux7 ; yes                    ;
+; show:comb_11|display:comb_10|out[2]                 ; show:comb_11|display:comb_10|Mux7 ; yes                    ;
+; show:comb_11|display:comb_10|out[3]                 ; show:comb_11|display:comb_10|Mux7 ; yes                    ;
+; show:comb_11|display:comb_10|out[4]                 ; show:comb_11|display:comb_10|Mux7 ; yes                    ;
+; show:comb_11|display:comb_10|out[5]                 ; show:comb_11|display:comb_10|Mux7 ; yes                    ;
+; show:comb_11|display:comb_10|out[6]                 ; show:comb_11|display:comb_10|Mux7 ; yes                    ;
+; show:comb_11|display:comb_11|out[0]                 ; show:comb_11|display:comb_11|Mux7 ; yes                    ;
+; show:comb_11|display:comb_11|out[1]                 ; show:comb_11|display:comb_11|Mux7 ; yes                    ;
+; show:comb_11|display:comb_11|out[2]                 ; show:comb_11|display:comb_11|Mux7 ; yes                    ;
+; show:comb_11|display:comb_11|out[3]                 ; show:comb_11|display:comb_11|Mux7 ; yes                    ;
+; show:comb_11|display:comb_11|out[4]                 ; show:comb_11|display:comb_11|Mux7 ; yes                    ;
+; show:comb_11|display:comb_11|out[5]                 ; show:comb_11|display:comb_11|Mux7 ; yes                    ;
+; show:comb_11|display:comb_11|out[6]                 ; show:comb_11|display:comb_11|Mux7 ; yes                    ;
+; clock_signal:clockring|cout[0]                      ; GND                               ; yes                    ;
+; clock_signal:clockring|cout[1]                      ; GND                               ; yes                    ;
+; clock_signal:clockring|cout[2]                      ; GND                               ; yes                    ;
+; clock_signal:clockring|cout[3]                      ; GND                               ; yes                    ;
+; clock_signal:clockring|cout[4]                      ; GND                               ; yes                    ;
+; clock_signal:clockring|cout[5]                      ; GND                               ; yes                    ;
+; clock_signal:clockring|cout[6]                      ; GND                               ; yes                    ;
+; clock_signal:clockring|cout[7]                      ; GND                               ; yes                    ;
+; carryclk[1]                                         ; carryclk[1]                       ; yes                    ;
+; carryclk[0]                                         ; carryclk[0]                       ; yes                    ;
+; carryclk[2]                                         ; carryclk[0]                       ; yes                    ;
+; carryclk[3]                                         ; carryclk[1]                       ; yes                    ;
+; carryclk[4]                                         ; carryclk[0]                       ; yes                    ;
+; carryclk[5]                                         ; carryclk[1]                       ; yes                    ;
+; Number of user-specified and inferred latches = 56  ;                                   ;                        ;
++-----------------------------------------------------+-----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++-----------------------------------------+---------------------------------------------------+
+; Register name                           ; Reason for Removal                                ;
++-----------------------------------------+---------------------------------------------------+
+; alarm_signal:alarmring|cnt_length[0]    ; Merged with clock_signal:clockring|cnt_length[0]  ;
+; alarm_signal:alarmring|cnt_length[1]    ; Merged with clock_signal:clockring|cnt_length[1]  ;
+; alarm_signal:alarmring|cnt_length[2]    ; Merged with clock_signal:clockring|cnt_length[2]  ;
+; alarm_signal:alarmring|cnt_length[3]    ; Merged with clock_signal:clockring|cnt_length[3]  ;
+; alarm_signal:alarmring|cnt_length[4]    ; Merged with clock_signal:clockring|cnt_length[4]  ;
+; alarm_signal:alarmring|cnt_length[5]    ; Merged with clock_signal:clockring|cnt_length[5]  ;
+; alarm_signal:alarmring|cnt_length[6]    ; Merged with clock_signal:clockring|cnt_length[6]  ;
+; alarm_signal:alarmring|cnt_length[7]    ; Merged with clock_signal:clockring|cnt_length[7]  ;
+; alarm_signal:alarmring|cnt_length[8]    ; Merged with clock_signal:clockring|cnt_length[8]  ;
+; alarm_signal:alarmring|cnt_length[9]    ; Merged with clock_signal:clockring|cnt_length[9]  ;
+; alarm_signal:alarmring|cnt_length[10]   ; Merged with clock_signal:clockring|cnt_length[10] ;
+; alarm_signal:alarmring|cnt_length[11]   ; Merged with clock_signal:clockring|cnt_length[11] ;
+; alarm_signal:alarmring|cnt_length[12]   ; Merged with clock_signal:clockring|cnt_length[12] ;
+; alarm_signal:alarmring|cnt_length[13]   ; Merged with clock_signal:clockring|cnt_length[13] ;
+; alarm_signal:alarmring|cnt_length[14]   ; Merged with clock_signal:clockring|cnt_length[14] ;
+; alarm_signal:alarmring|cnt_length[15]   ; Merged with clock_signal:clockring|cnt_length[15] ;
+; alarm_signal:alarmring|cnt_length[16]   ; Merged with clock_signal:clockring|cnt_length[16] ;
+; alarm_signal:alarmring|cnt_length[17]   ; Merged with clock_signal:clockring|cnt_length[17] ;
+; alarm_signal:alarmring|cnt_length[18]   ; Merged with clock_signal:clockring|cnt_length[18] ;
+; alarm_signal:alarmring|cnt_length[19]   ; Merged with clock_signal:clockring|cnt_length[19] ;
+; alarm_signal:alarmring|cnt_length[20]   ; Merged with clock_signal:clockring|cnt_length[20] ;
+; alarm_signal:alarmring|cnt_length[21]   ; Merged with clock_signal:clockring|cnt_length[21] ;
+; alarm_signal:alarmring|cnt_length[22]   ; Merged with clock_signal:clockring|cnt_length[22] ;
+; alarm_signal:alarmring|cnt_length[23]   ; Merged with clock_signal:clockring|cnt_length[23] ;
+; alarm_signal:alarmring|cnt_length[24]   ; Merged with clock_signal:clockring|cnt_length[24] ;
+; alarm_signal:alarmring|cnt_length[25]   ; Merged with clock_signal:clockring|cnt_length[25] ;
+; alarm_signal:alarmring|cnt_length[26]   ; Merged with clock_signal:clockring|cnt_length[26] ;
+; alarm_signal:alarmring|cnt_length[27]   ; Merged with clock_signal:clockring|cnt_length[27] ;
+; alarm_signal:alarmring|cnt_length[28]   ; Merged with clock_signal:clockring|cnt_length[28] ;
+; alarm_signal:alarmring|cnt_length[29]   ; Merged with clock_signal:clockring|cnt_length[29] ;
+; alarm_signal:alarmring|cnt_length[30]   ; Merged with clock_signal:clockring|cnt_length[30] ;
+; alarm_signal:alarmring|cnt_length[31]   ; Merged with clock_signal:clockring|cnt_length[31] ;
+; alarmmode.noneset                       ; Lost fanout                                       ;
+; alarmmode~2                             ; Lost fanout                                       ;
+; original_to_1HZ:get1HZ|cnt_1HZ[0]       ; Merged with original_to_1kHZ:get1kHZ|cnt_1kHZ[0]  ;
+; original_to_100HZ:get100HZ|cnt_100HZ[0] ; Merged with original_to_1kHZ:get1kHZ|cnt_1kHZ[0]  ;
+; original_to_2HZ:get2HZ|cnt_2HZ[0]       ; Merged with original_to_1kHZ:get1kHZ|cnt_1kHZ[0]  ;
+; original_to_2HZ:get2HZ|cnt_2HZ[1]       ; Merged with original_to_1kHZ:get1kHZ|cnt_1kHZ[1]  ;
+; original_to_100HZ:get100HZ|cnt_100HZ[1] ; Merged with original_to_1kHZ:get1kHZ|cnt_1kHZ[1]  ;
+; original_to_1HZ:get1HZ|cnt_1HZ[1]       ; Merged with original_to_1kHZ:get1kHZ|cnt_1kHZ[1]  ;
+; original_to_100HZ:get100HZ|cnt_100HZ[2] ; Merged with original_to_2HZ:get2HZ|cnt_2HZ[2]     ;
+; original_to_1HZ:get1HZ|cnt_1HZ[2]       ; Merged with original_to_2HZ:get2HZ|cnt_2HZ[2]     ;
+; original_to_2HZ:get2HZ|cnt_2HZ[2]       ; Merged with original_to_1kHZ:get1kHZ|cnt_1kHZ[2]  ;
+; original_to_100HZ:get100HZ|cnt_100HZ[3] ; Merged with original_to_2HZ:get2HZ|cnt_2HZ[3]     ;
+; original_to_1HZ:get1HZ|cnt_1HZ[3]       ; Merged with original_to_2HZ:get2HZ|cnt_2HZ[3]     ;
+; original_to_1HZ:get1HZ|cnt_1HZ[4]       ; Merged with original_to_2HZ:get2HZ|cnt_2HZ[4]     ;
+; selfadder:hour1|clocktime[2..3]         ; Stuck at GND due to stuck port data_in            ;
+; selfadder:sec1|clocktime[3]             ; Stuck at GND due to stuck port data_in            ;
+; selfadder:min1|clocktime[3]             ; Stuck at GND due to stuck port data_in            ;
+; selfadder:run_sec1|clocktime[3]         ; Stuck at GND due to stuck port data_in            ;
+; Total Number of Removed Registers = 51  ;                                                   ;
++-----------------------------------------+---------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                       ;
++------------------------------+---------------------------+----------------------------------------+
+; Register name                ; Reason for Removal        ; Registers Removed due to This Register ;
++------------------------------+---------------------------+----------------------------------------+
+; selfadder:hour1|clocktime[2] ; Stuck at GND              ; selfadder:hour1|clocktime[3]           ;
+;                              ; due to stuck port data_in ;                                        ;
++------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 222   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clock|alarmhour0[0]                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clock|alarmmin0[2]                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clock|selfadder:run_min1|clocktime[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clock|selfadder:run_min0|clocktime[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clock|selfadder:run_sec1|clocktime[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clock|selfadder:run_sec0|clocktime[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clock|selfadder:run_ms1|clocktime[0]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clock|selfadder:run_ms0|clocktime[2]  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |clock|alarmmin1[3]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |clock|showsec1[0]                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |clock|showmin0[0]                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |clock|whichtoset[2]                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+
+
++-------------------------------------------------+
+; Source assignments for Top-level Entity: |clock ;
++------------+----------+------+------------------+
+; Assignment ; Value    ; From ; To               ;
++------------+----------+------+------------------+
+; LOCATION   ; Pin_Y24  ; -    ; modeswitch[1]    ;
+; LOCATION   ; Pin_AA22 ; -    ; modeswitch[0]    ;
+; LOCATION   ; Pin_AA14 ; -    ; ledhour1[6]      ;
+; LOCATION   ; Pin_AG18 ; -    ; ledhour1[5]      ;
+; LOCATION   ; Pin_AF17 ; -    ; ledhour1[4]      ;
+; LOCATION   ; Pin_AH17 ; -    ; ledhour1[3]      ;
+; LOCATION   ; Pin_AG17 ; -    ; ledhour1[2]      ;
+; LOCATION   ; Pin_AE17 ; -    ; ledhour1[1]      ;
+; LOCATION   ; Pin_AD17 ; -    ; ledhour1[0]      ;
+; LOCATION   ; Pin_AC17 ; -    ; ledhour0[6]      ;
+; LOCATION   ; Pin_AA15 ; -    ; ledhour0[5]      ;
+; LOCATION   ; Pin_AB15 ; -    ; ledhour0[4]      ;
+; LOCATION   ; Pin_AB17 ; -    ; ledhour0[3]      ;
+; LOCATION   ; Pin_AA16 ; -    ; ledhour0[2]      ;
+; LOCATION   ; Pin_AB16 ; -    ; ledhour0[1]      ;
+; LOCATION   ; Pin_AA17 ; -    ; ledhour0[0]      ;
+; LOCATION   ; Pin_AH18 ; -    ; ledmin1[6]       ;
+; LOCATION   ; Pin_AF18 ; -    ; ledmin1[5]       ;
+; LOCATION   ; Pin_AG19 ; -    ; ledmin1[4]       ;
+; LOCATION   ; Pin_AH19 ; -    ; ledmin1[3]       ;
+; LOCATION   ; Pin_AB18 ; -    ; ledmin1[2]       ;
+; LOCATION   ; Pin_AC18 ; -    ; ledmin1[1]       ;
+; LOCATION   ; Pin_AD18 ; -    ; ledmin1[0]       ;
+; LOCATION   ; Pin_AE18 ; -    ; ledmin0[6]       ;
+; LOCATION   ; Pin_AF19 ; -    ; ledmin0[5]       ;
+; LOCATION   ; Pin_AE19 ; -    ; ledmin0[4]       ;
+; LOCATION   ; Pin_AH21 ; -    ; ledmin0[3]       ;
+; LOCATION   ; Pin_AG21 ; -    ; ledmin0[2]       ;
+; LOCATION   ; Pin_AA19 ; -    ; ledmin0[1]       ;
+; LOCATION   ; Pin_AB19 ; -    ; ledmin0[0]       ;
+; LOCATION   ; Pin_W28  ; -    ; ledsec1[6]       ;
+; LOCATION   ; Pin_W27  ; -    ; ledsec1[5]       ;
+; LOCATION   ; Pin_Y26  ; -    ; ledsec1[4]       ;
+; LOCATION   ; Pin_W26  ; -    ; ledsec1[3]       ;
+; LOCATION   ; Pin_Y25  ; -    ; ledsec1[2]       ;
+; LOCATION   ; Pin_AA26 ; -    ; ledsec1[1]       ;
+; LOCATION   ; Pin_AA25 ; -    ; ledsec1[0]       ;
+; LOCATION   ; Pin_U24  ; -    ; ledsec0[6]       ;
+; LOCATION   ; Pin_U23  ; -    ; ledsec0[5]       ;
+; LOCATION   ; Pin_W25  ; -    ; ledsec0[4]       ;
+; LOCATION   ; Pin_W22  ; -    ; ledsec0[3]       ;
+; LOCATION   ; Pin_W21  ; -    ; ledsec0[2]       ;
+; LOCATION   ; Pin_Y22  ; -    ; ledsec0[1]       ;
+; LOCATION   ; Pin_M24  ; -    ; ledsec0[0]       ;
+; LOCATION   ; Pin_G21  ; -    ; signal_led[7]    ;
+; LOCATION   ; Pin_G22  ; -    ; signal_led[6]    ;
+; LOCATION   ; Pin_G20  ; -    ; signal_led[5]    ;
+; LOCATION   ; Pin_H21  ; -    ; signal_led[4]    ;
+; LOCATION   ; Pin_E24  ; -    ; signal_led[3]    ;
+; LOCATION   ; Pin_E25  ; -    ; signal_led[2]    ;
+; LOCATION   ; Pin_E22  ; -    ; signal_led[1]    ;
+; LOCATION   ; Pin_E21  ; -    ; signal_led[0]    ;
+; LOCATION   ; Pin_H17  ; -    ; signal_led2[7]   ;
+; LOCATION   ; Pin_J16  ; -    ; signal_led2[6]   ;
+; LOCATION   ; Pin_H16  ; -    ; signal_led2[5]   ;
+; LOCATION   ; Pin_J15  ; -    ; signal_led2[4]   ;
+; LOCATION   ; Pin_G17  ; -    ; signal_led2[3]   ;
+; LOCATION   ; Pin_J17  ; -    ; signal_led2[2]   ;
+; LOCATION   ; Pin_H19  ; -    ; signal_led2[1]   ;
+; LOCATION   ; Pin_J19  ; -    ; signal_led2[0]   ;
+; LOCATION   ; Pin_Y2   ; -    ; original_clk     ;
+; LOCATION   ; Pin_Y23  ; -    ; clr              ;
+; LOCATION   ; Pin_AA23 ; -    ; func             ;
+; LOCATION   ; Pin_N21  ; -    ; posswitch        ;
+; LOCATION   ; Pin_M21  ; -    ; changetime       ;
++------------+----------+------+------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |clock ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; clock_mode     ; 00    ; Unsigned Binary                              ;
+; set_mode       ; 01    ; Unsigned Binary                              ;
+; alarm_mode     ; 10    ; Unsigned Binary                              ;
+; noneset        ; 000   ; Unsigned Binary                              ;
+; secset         ; 001   ; Unsigned Binary                              ;
+; minset         ; 010   ; Unsigned Binary                              ;
+; hourset        ; 100   ; Unsigned Binary                              ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alarm_signal:alarmring ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; starlength     ; 200   ; Signed Integer                             ;
+; spacelength    ; 100   ; Signed Integer                             ;
+; longlength     ; 400   ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_signal:clockring ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; starlength     ; 1000  ; Signed Integer                             ;
+; spacelength    ; 800   ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "selfadder:run_min1"                                                                         ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; system[2..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; system[3]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; system[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cout         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "selfadder:run_min0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; system[2..1] ; Input ; Info     ; Stuck at GND ;
+; system[3]    ; Input ; Info     ; Stuck at VCC ;
+; system[0]    ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "selfadder:run_sec1" ;
++-----------+-------+----------+-----------------+
+; Port      ; Type  ; Severity ; Details         ;
++-----------+-------+----------+-----------------+
+; system[3] ; Input ; Info     ; Stuck at GND    ;
+; system[2] ; Input ; Info     ; Stuck at VCC    ;
+; system[1] ; Input ; Info     ; Stuck at GND    ;
+; system[0] ; Input ; Info     ; Stuck at VCC    ;
++-----------+-------+----------+-----------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "selfadder:run_sec0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; system[2..1] ; Input ; Info     ; Stuck at GND ;
+; system[3]    ; Input ; Info     ; Stuck at VCC ;
+; system[0]    ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "selfadder:run_ms1"  ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; system[2..1] ; Input ; Info     ; Stuck at GND ;
+; system[3]    ; Input ; Info     ; Stuck at VCC ;
+; system[0]    ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "selfadder:run_ms0"  ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; system[2..1] ; Input ; Info     ; Stuck at GND ;
+; system[3]    ; Input ; Info     ; Stuck at VCC ;
+; system[0]    ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "selfadder:hour1"                                                                                                                                                                           ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                                            ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; system[3..2] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; system[1]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; system[0]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; cout         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; reset        ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "selfadder:hour0"                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; system[2] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; system[0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; reset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "selfadder:min1"                                                                                                                                                                        ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; system[3] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; system[2] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; system[1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; system[0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; reset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "selfadder:min0"                                                                                                                                                                           ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; system[2..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; system[3]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; system[0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; reset        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "selfadder:sec1"                                                                                                                                                                        ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; system[3] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; system[2] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; system[1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; system[0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; reset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "selfadder:sec0"                                                                                                                                                                           ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; system[2..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; system[3]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; system[0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; reset        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 10.0 Build 218 06/27/2010 SJ Full Version
+    Info: Processing started: Thu Dec 19 10:32:34 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off clock -c clock
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Found 1 design units, including 1 entities, in source file show.v
+    Info: Found entity 1: show
+Info: Found 1 design units, including 1 entities, in source file selfadder.v
+    Info: Found entity 1: selfadder
+Info: Found 1 design units, including 1 entities, in source file original_to_100hz.v
+    Info: Found entity 1: original_to_100HZ
+Info: Found 1 design units, including 1 entities, in source file original_to_2hz.v
+    Info: Found entity 1: original_to_2HZ
+Info: Found 1 design units, including 1 entities, in source file original_to_1khz.v
+    Info: Found entity 1: original_to_1kHZ
+Info: Found 1 design units, including 1 entities, in source file original_to_1hz.v
+    Info: Found entity 1: original_to_1HZ
+Info: Found 1 design units, including 1 entities, in source file display.v
+    Info: Found entity 1: display
+Info: Found 1 design units, including 1 entities, in source file clock_signal.v
+    Info: Found entity 1: clock_signal
+Info: Found 1 design units, including 1 entities, in source file clock.v
+    Info: Found entity 1: clock
+Info: Found 1 design units, including 1 entities, in source file alarm_signal.v
+    Info: Found entity 1: alarm_signal
+Critical Warning (10846): Verilog HDL Instantiation warning at show.v(16): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at show.v(17): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at show.v(18): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at show.v(19): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at show.v(20): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at show.v(21): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at clock.v(77): instance has no name
+Info: Elaborating entity "clock" for the top level hierarchy
+Warning (10270): Verilog HDL Case Statement warning at clock.v(129): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at clock.v(129): all case item expressions in this case statement are onehot
+Warning (10240): Verilog HDL Always Construct warning at clock.v(116): inferring latch(es) for variable "carryclk", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "carryclk[0]" at clock.v(162)
+Info (10041): Inferred latch for "carryclk[1]" at clock.v(162)
+Info (10041): Inferred latch for "carryclk[2]" at clock.v(162)
+Info (10041): Inferred latch for "carryclk[3]" at clock.v(162)
+Info (10041): Inferred latch for "carryclk[4]" at clock.v(162)
+Info (10041): Inferred latch for "carryclk[5]" at clock.v(162)
+Info: Elaborating entity "original_to_1HZ" for hierarchy "original_to_1HZ:get1HZ"
+Info: Elaborating entity "original_to_2HZ" for hierarchy "original_to_2HZ:get2HZ"
+Info: Elaborating entity "original_to_100HZ" for hierarchy "original_to_100HZ:get100HZ"
+Info: Elaborating entity "original_to_1kHZ" for hierarchy "original_to_1kHZ:get1kHZ"
+Info: Elaborating entity "selfadder" for hierarchy "selfadder:sec0"
+Warning (10230): Verilog HDL assignment warning at selfadder.v(23): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "show" for hierarchy "show:comb_11"
+Info: Elaborating entity "display" for hierarchy "show:comb_11|display:comb_6"
+Warning (10270): Verilog HDL Case Statement warning at display.v(13): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at display.v(9): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at display.v(9)
+Info (10041): Inferred latch for "out[1]" at display.v(9)
+Info (10041): Inferred latch for "out[2]" at display.v(9)
+Info (10041): Inferred latch for "out[3]" at display.v(9)
+Info (10041): Inferred latch for "out[4]" at display.v(9)
+Info (10041): Inferred latch for "out[5]" at display.v(9)
+Info (10041): Inferred latch for "out[6]" at display.v(9)
+Info: Elaborating entity "alarm_signal" for hierarchy "alarm_signal:alarmring"
+Warning (10235): Verilog HDL Always Construct warning at alarm_signal.v(21): variable "on" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info: Elaborating entity "clock_signal" for hierarchy "clock_signal:clockring"
+Warning (10235): Verilog HDL Always Construct warning at clock_signal.v(20): variable "on" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at clock_signal.v(18): inferring latch(es) for variable "cout", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "cout[0]" at clock_signal.v(18)
+Info (10041): Inferred latch for "cout[1]" at clock_signal.v(18)
+Info (10041): Inferred latch for "cout[2]" at clock_signal.v(18)
+Info (10041): Inferred latch for "cout[3]" at clock_signal.v(18)
+Info (10041): Inferred latch for "cout[4]" at clock_signal.v(18)
+Info (10041): Inferred latch for "cout[5]" at clock_signal.v(18)
+Info (10041): Inferred latch for "cout[6]" at clock_signal.v(18)
+Info (10041): Inferred latch for "cout[7]" at clock_signal.v(18)
+Info: Ignored 7 buffer(s)
+    Info: Ignored 7 SOFT buffer(s)
+Warning: 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Latch show:comb_11|display:comb_6|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_6|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_6|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_6|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_6|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_6|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_6|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_7|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_7|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_7|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_7|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_7|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_7|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_7|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:hour0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_8|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_8|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_8|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_8|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_8|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_8|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_8|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_9|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_9|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_9|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_9|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_9|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_9|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_9|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:min0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_10|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_10|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_10|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_10|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_10|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_10|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_10|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec1|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_11|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_11|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_11|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_11|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_11|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_11|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch show:comb_11|display:comb_11|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal selfadder:sec0|clocktime[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal modeswitch[0]
+Warning: Latch carryclk[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal setmode.secset
+Warning: Latch carryclk[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal modeswitch[0]
+Warning: Latch carryclk[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal setmode.secset
+Info: Timing-Driven Synthesis is running
+Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+    Info: Register "alarmmode.noneset" lost all its fanouts during netlist optimizations.
+    Info: Register "alarmmode~2" lost all its fanouts during netlist optimizations.
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 628 device resources after synthesis - the final resource count might be different
+    Info: Implemented 7 input pins
+    Info: Implemented 58 output pins
+    Info: Implemented 563 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 148 warnings
+    Info: Peak virtual memory: 238 megabytes
+    Info: Processing ended: Thu Dec 19 10:32:38 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+

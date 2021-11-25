@@ -1,0 +1,677 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'original_clk'
+Slack : -4.121
+TNS   : -280.670
+
+Type  : Slow 1200mV 85C Model Setup 'original_to_1kHZ:get1kHZ|clk1kHZ'
+Slack : -3.729
+TNS   : -72.069
+
+Type  : Slow 1200mV 85C Model Setup 'changetime'
+Slack : -2.983
+TNS   : -37.585
+
+Type  : Slow 1200mV 85C Model Setup 'carryclk[4]'
+Slack : -1.062
+TNS   : -5.149
+
+Type  : Slow 1200mV 85C Model Setup 'selfadder:run_min0|cout'
+Slack : -0.864
+TNS   : -2.356
+
+Type  : Slow 1200mV 85C Model Setup 'selfadder:run_ms0|cout'
+Slack : -0.860
+TNS   : -3.081
+
+Type  : Slow 1200mV 85C Model Setup 'carryclk[1]'
+Slack : -0.849
+TNS   : -2.672
+
+Type  : Slow 1200mV 85C Model Setup 'original_to_100HZ:get100HZ|clk100HZ'
+Slack : -0.845
+TNS   : -3.314
+
+Type  : Slow 1200mV 85C Model Setup 'selfadder:run_ms1|cout'
+Slack : -0.809
+TNS   : -3.100
+
+Type  : Slow 1200mV 85C Model Setup 'selfadder:run_sec1|cout'
+Slack : -0.735
+TNS   : -2.915
+
+Type  : Slow 1200mV 85C Model Setup 'posswitch'
+Slack : -0.582
+TNS   : -1.240
+
+Type  : Slow 1200mV 85C Model Setup 'modeswitch[0]'
+Slack : -0.452
+TNS   : -1.549
+
+Type  : Slow 1200mV 85C Model Setup 'carryclk[2]'
+Slack : -0.358
+TNS   : -1.528
+
+Type  : Slow 1200mV 85C Model Setup 'carryclk[0]'
+Slack : -0.353
+TNS   : -1.195
+
+Type  : Slow 1200mV 85C Model Setup 'carryclk[3]'
+Slack : -0.216
+TNS   : -0.814
+
+Type  : Slow 1200mV 85C Model Setup 'selfadder:run_sec0|cout'
+Slack : -0.169
+TNS   : -0.591
+
+Type  : Slow 1200mV 85C Model Setup 'carryclk[5]'
+Slack : -0.006
+TNS   : -0.006
+
+Type  : Slow 1200mV 85C Model Setup 'original_to_2HZ:get2HZ|clk2HZ'
+Slack : 0.108
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'modeswitch[0]'
+Slack : -6.200
+TNS   : -245.859
+
+Type  : Slow 1200mV 85C Model Hold 'original_clk'
+Slack : -0.318
+TNS   : -0.649
+
+Type  : Slow 1200mV 85C Model Hold 'original_to_2HZ:get2HZ|clk2HZ'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'changetime'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'carryclk[1]'
+Slack : 0.415
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'selfadder:run_ms1|cout'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'carryclk[3]'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'carryclk[2]'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'selfadder:run_min0|cout'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'selfadder:run_ms0|cout'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'selfadder:run_sec0|cout'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'selfadder:run_sec1|cout'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'carryclk[0]'
+Slack : 0.436
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'original_to_100HZ:get100HZ|clk100HZ'
+Slack : 0.437
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'posswitch'
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'carryclk[4]'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'carryclk[5]'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'original_to_1kHZ:get1kHZ|clk1kHZ'
+Slack : 0.638
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'modeswitch[0]'
+Slack : 0.994
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'modeswitch[0]'
+Slack : -4.617
+TNS   : -158.405
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'original_clk'
+Slack : -3.000
+TNS   : -149.490
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'modeswitch[0]'
+Slack : -3.000
+TNS   : -85.151
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'changetime'
+Slack : -3.000
+TNS   : -23.560
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'posswitch'
+Slack : -3.000
+TNS   : -10.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'original_to_1kHZ:get1kHZ|clk1kHZ'
+Slack : -1.285
+TNS   : -41.120
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'carryclk[0]'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'carryclk[2]'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'carryclk[4]'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'original_to_100HZ:get100HZ|clk100HZ'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'selfadder:run_ms0|cout'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'selfadder:run_ms1|cout'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'selfadder:run_sec1|cout'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'carryclk[1]'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'carryclk[3]'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'selfadder:run_min0|cout'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'selfadder:run_sec0|cout'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'carryclk[5]'
+Slack : -1.285
+TNS   : -2.570
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'original_to_2HZ:get2HZ|clk2HZ'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Setup 'original_clk'
+Slack : -3.713
+TNS   : -241.728
+
+Type  : Slow 1200mV 0C Model Setup 'original_to_1kHZ:get1kHZ|clk1kHZ'
+Slack : -3.356
+TNS   : -61.068
+
+Type  : Slow 1200mV 0C Model Setup 'changetime'
+Slack : -2.764
+TNS   : -34.180
+
+Type  : Slow 1200mV 0C Model Setup 'carryclk[4]'
+Slack : -0.901
+TNS   : -4.194
+
+Type  : Slow 1200mV 0C Model Setup 'selfadder:run_min0|cout'
+Slack : -0.699
+TNS   : -1.747
+
+Type  : Slow 1200mV 0C Model Setup 'carryclk[1]'
+Slack : -0.690
+TNS   : -2.063
+
+Type  : Slow 1200mV 0C Model Setup 'original_to_100HZ:get100HZ|clk100HZ'
+Slack : -0.683
+TNS   : -2.497
+
+Type  : Slow 1200mV 0C Model Setup 'selfadder:run_ms0|cout'
+Slack : -0.669
+TNS   : -2.269
+
+Type  : Slow 1200mV 0C Model Setup 'selfadder:run_ms1|cout'
+Slack : -0.624
+TNS   : -2.298
+
+Type  : Slow 1200mV 0C Model Setup 'selfadder:run_sec1|cout'
+Slack : -0.556
+TNS   : -2.126
+
+Type  : Slow 1200mV 0C Model Setup 'posswitch'
+Slack : -0.427
+TNS   : -0.708
+
+Type  : Slow 1200mV 0C Model Setup 'modeswitch[0]'
+Slack : -0.323
+TNS   : -1.582
+
+Type  : Slow 1200mV 0C Model Setup 'carryclk[2]'
+Slack : -0.216
+TNS   : -0.848
+
+Type  : Slow 1200mV 0C Model Setup 'carryclk[0]'
+Slack : -0.215
+TNS   : -0.573
+
+Type  : Slow 1200mV 0C Model Setup 'carryclk[3]'
+Slack : -0.097
+TNS   : -0.328
+
+Type  : Slow 1200mV 0C Model Setup 'selfadder:run_sec0|cout'
+Slack : -0.054
+TNS   : -0.135
+
+Type  : Slow 1200mV 0C Model Setup 'carryclk[5]'
+Slack : 0.099
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'original_to_2HZ:get2HZ|clk2HZ'
+Slack : 0.202
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'modeswitch[0]'
+Slack : -5.632
+TNS   : -222.310
+
+Type  : Slow 1200mV 0C Model Hold 'original_clk'
+Slack : -0.281
+TNS   : -0.548
+
+Type  : Slow 1200mV 0C Model Hold 'original_to_2HZ:get2HZ|clk2HZ'
+Slack : 0.303
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'changetime'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'carryclk[1]'
+Slack : 0.369
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'carryclk[3]'
+Slack : 0.381
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'selfadder:run_min0|cout'
+Slack : 0.381
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'selfadder:run_ms1|cout'
+Slack : 0.381
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'selfadder:run_sec0|cout'
+Slack : 0.381
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'carryclk[0]'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'carryclk[2]'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'selfadder:run_sec1|cout'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'original_to_100HZ:get100HZ|clk100HZ'
+Slack : 0.384
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'selfadder:run_ms0|cout'
+Slack : 0.384
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'carryclk[4]'
+Slack : 0.393
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'posswitch'
+Slack : 0.393
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'carryclk[5]'
+Slack : 0.395
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'original_to_1kHZ:get1kHZ|clk1kHZ'
+Slack : 0.580
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'modeswitch[0]'
+Slack : 0.655
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'modeswitch[0]'
+Slack : -4.189
+TNS   : -143.335
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'original_clk'
+Slack : -3.000
+TNS   : -149.490
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'modeswitch[0]'
+Slack : -3.000
+TNS   : -62.081
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'changetime'
+Slack : -3.000
+TNS   : -23.560
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'posswitch'
+Slack : -3.000
+TNS   : -10.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'original_to_1kHZ:get1kHZ|clk1kHZ'
+Slack : -1.285
+TNS   : -41.120
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'carryclk[0]'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'carryclk[2]'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'carryclk[4]'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'original_to_100HZ:get100HZ|clk100HZ'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'selfadder:run_ms0|cout'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'selfadder:run_ms1|cout'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'selfadder:run_sec1|cout'
+Slack : -1.285
+TNS   : -6.425
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'carryclk[1]'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'carryclk[3]'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'selfadder:run_min0|cout'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'selfadder:run_sec0|cout'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'carryclk[5]'
+Slack : -1.285
+TNS   : -2.570
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'original_to_2HZ:get2HZ|clk2HZ'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Fast 1200mV 0C Model Setup 'original_clk'
+Slack : -1.515
+TNS   : -82.456
+
+Type  : Fast 1200mV 0C Model Setup 'original_to_1kHZ:get1kHZ|clk1kHZ'
+Slack : -1.330
+TNS   : -20.764
+
+Type  : Fast 1200mV 0C Model Setup 'changetime'
+Slack : -0.863
+TNS   : -8.992
+
+Type  : Fast 1200mV 0C Model Setup 'modeswitch[0]'
+Slack : -0.354
+TNS   : -1.014
+
+Type  : Fast 1200mV 0C Model Setup 'carryclk[4]'
+Slack : -0.024
+TNS   : -0.031
+
+Type  : Fast 1200mV 0C Model Setup 'carryclk[1]'
+Slack : 0.095
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'selfadder:run_ms0|cout'
+Slack : 0.100
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'original_to_100HZ:get100HZ|clk100HZ'
+Slack : 0.107
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'selfadder:run_min0|cout'
+Slack : 0.118
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'selfadder:run_ms1|cout'
+Slack : 0.124
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'selfadder:run_sec1|cout'
+Slack : 0.161
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'posswitch'
+Slack : 0.224
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'carryclk[2]'
+Slack : 0.336
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'carryclk[0]'
+Slack : 0.337
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'carryclk[3]'
+Slack : 0.411
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'selfadder:run_sec0|cout'
+Slack : 0.442
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'carryclk[5]'
+Slack : 0.518
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'original_to_2HZ:get2HZ|clk2HZ'
+Slack : 0.576
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'modeswitch[0]'
+Slack : -3.359
+TNS   : -134.044
+
+Type  : Fast 1200mV 0C Model Hold 'original_clk'
+Slack : -0.374
+TNS   : -0.952
+
+Type  : Fast 1200mV 0C Model Hold 'original_to_2HZ:get2HZ|clk2HZ'
+Slack : 0.158
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'changetime'
+Slack : 0.174
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'carryclk[1]'
+Slack : 0.194
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'carryclk[2]'
+Slack : 0.198
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'selfadder:run_min0|cout'
+Slack : 0.198
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'selfadder:run_sec1|cout'
+Slack : 0.198
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'carryclk[0]'
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'carryclk[3]'
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'selfadder:run_ms0|cout'
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'original_to_100HZ:get100HZ|clk100HZ'
+Slack : 0.200
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'selfadder:run_ms1|cout'
+Slack : 0.200
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'selfadder:run_sec0|cout'
+Slack : 0.200
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'posswitch'
+Slack : 0.204
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'carryclk[4]'
+Slack : 0.207
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'carryclk[5]'
+Slack : 0.207
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'original_to_1kHZ:get1kHZ|clk1kHZ'
+Slack : 0.280
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'modeswitch[0]'
+Slack : 0.288
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'modeswitch[0]'
+Slack : -2.482
+TNS   : -85.501
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'original_clk'
+Slack : -3.000
+TNS   : -226.524
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'modeswitch[0]'
+Slack : -3.000
+TNS   : -66.700
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'changetime'
+Slack : -3.000
+TNS   : -38.386
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'posswitch'
+Slack : -3.000
+TNS   : -15.902
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'original_to_1kHZ:get1kHZ|clk1kHZ'
+Slack : -1.899
+TNS   : -60.768
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'carryclk[0]'
+Slack : -1.899
+TNS   : -9.495
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'carryclk[2]'
+Slack : -1.899
+TNS   : -9.495
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'carryclk[4]'
+Slack : -1.899
+TNS   : -9.495
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'original_to_100HZ:get100HZ|clk100HZ'
+Slack : -1.899
+TNS   : -9.495
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'selfadder:run_ms0|cout'
+Slack : -1.899
+TNS   : -9.495
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'selfadder:run_ms1|cout'
+Slack : -1.899
+TNS   : -9.495
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'selfadder:run_sec1|cout'
+Slack : -1.899
+TNS   : -9.495
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'carryclk[1]'
+Slack : -1.899
+TNS   : -7.596
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'carryclk[3]'
+Slack : -1.899
+TNS   : -7.596
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'selfadder:run_min0|cout'
+Slack : -1.899
+TNS   : -7.596
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'selfadder:run_sec0|cout'
+Slack : -1.899
+TNS   : -7.596
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'carryclk[5]'
+Slack : -1.899
+TNS   : -3.798
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'original_to_2HZ:get2HZ|clk2HZ'
+Slack : -1.899
+TNS   : -1.899
+
+------------------------------------------------------------

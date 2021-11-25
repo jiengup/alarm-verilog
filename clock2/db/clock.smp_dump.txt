@@ -1,0 +1,13 @@
+
+State Machine - |clock|alarmmode
+Name alarmmode.noneset alarmmode.hourset alarmmode.minset 
+alarmmode.noneset 0 0 0 
+alarmmode.minset 1 0 1 
+alarmmode.hourset 1 1 0 
+
+State Machine - |clock|setmode
+Name setmode.noneset setmode.hourset setmode.minset setmode.secset 
+setmode.noneset 0 0 0 0 
+setmode.secset 1 0 0 1 
+setmode.minset 1 0 1 0 
+setmode.hourset 1 1 0 0 
